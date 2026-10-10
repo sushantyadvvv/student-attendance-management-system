@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mark Attendance</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Student Attendance System</h1>
+        <p>Attendance Management</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Dashboard</a>
+        <a href="attendance.html">Attendance</a>
+    </nav>
+
+    <main>
+        <h2>Mark Student Attendance</h2>
+
+        <label for="attendanceDate">Select Date:</label>
+        <input type="date" id="attendanceDate">
+
+        <button id="markAllButton" type="button">
+            Mark All Present
+        </button>
+
+        <div style="overflow-x:auto; margin-top:20px;">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Roll No.</th>
+                        <th>Student Name</th>
+                        <th>Attendance Status</th>
+                    </tr>
+                </thead>
+                <tbody id="attendanceTable"></tbody>
+            </table>
+        </div>
+
+        <p id="message" role="status"></p>
+        <button id="saveButton" type="button">Save Attendance</button>
+
+        <h2>Saved Attendance</h2>
+        <div style="overflow-x:auto;">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Roll No.</th>
+                        <th>Name</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="recordsTable"></tbody>
+            </table>
+        </div>
+    </main>
+
+    <script src="attendance.js"></script>
+</body>
+</html>
