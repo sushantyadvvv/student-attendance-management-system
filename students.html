@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Students - Attendance Management System</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Student Attendance Management System</h1>
+        <p>Student Management</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Dashboard</a>
+        <a href="students.html">Students</a>
+        <a href="attendance.html">Attendance</a>
+        <a href="reports.html">Reports</a>
+    </nav>
+
+    <main>
+
+        <h2>Student Management</h2>
+
+        <div class="student-actions">
+            <input
+                type="text"
+                id="searchStudent"
+                placeholder="Search student..."
+            >
+
+            <button type="button">
+                + Add Student
+            </button>
+        </div>
+
+        <section>
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Roll No.</th>
+                        <th>Student Name</th>
+                        <th>Course</th>
+                        <th>Email</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>101</td>
+                        <td>Rahul Sharma</td>
+                        <td>B.Tech</td>
+                        <td>rahul@example.com</td>
+                        <td>
+                            <button type="button">Edit</button>
+                            <button type="button">Delete</button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>102</td>
+                        <td>Priya Verma</td>
+                        <td>B.Tech</td>
+                        <td>priya@example.com</td>
+                        <td>
+                            <button type="button">Edit</button>
+                            <button type="button">Delete</button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>103</td>
+                        <td>Amit Kumar</td>
+                        <td>B.Tech</td>
+                        <td>amit@example.com</td>
+                        <td>
+                            <button type="button">Edit</button>
+                            <button type="button">Delete</button>
+                        </td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Student Attendance Management System</p>
+    </footer>
+
+</body>
+</html>
