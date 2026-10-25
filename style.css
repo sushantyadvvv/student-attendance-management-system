@@ -93,3 +93,232 @@ footer {
         margin: 8px;
     }
 }
+
+/* Attendance Page */
+
+.page-header {
+    margin-bottom: 25px;
+}
+
+.page-header h2 {
+    margin-bottom: 8px;
+}
+
+.page-header p {
+    color: #64748b;
+}
+
+.attendance-controls {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 20px;
+    background: white;
+    padding: 20px;
+    margin-bottom: 25px;
+    border-radius: 10px;
+    box-shadow: 0 3px 12px #0000000d;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-weight: bold;
+}
+
+.form-group input {
+    padding: 10px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+.attendance-controls button,
+.attendance-action button {
+    background: #1d4ed8;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 11px 18px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.attendance-controls button:hover,
+.attendance-action button:hover {
+    opacity: 0.9;
+}
+
+.table-section {
+    background: white;
+    padding: 25px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    box-shadow: 0 3px 12px #0000000d;
+}
+
+.table-section h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.table-container {
+    overflow-x: auto;
+}
+
+.table-container table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table-container th,
+.table-container td {
+    padding: 14px;
+    text-align: left;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.table-container th {
+    background: #dbeafe;
+}
+
+.attendance-action {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+#message {
+    font-weight: bold;
+    margin: 0;
+}
+
+@media (max-width: 600px) {
+    .attendance-controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .attendance-action {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 15px;
+    }
+}
+
+/* Students Page */
+
+.student-actions {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 20px;
+    background: white;
+    padding: 20px;
+    margin-bottom: 25px;
+    border-radius: 10px;
+    box-shadow: 0 3px 12px #0000000d;
+}
+
+.student-actions .form-group {
+    flex: 1;
+}
+
+.student-actions input {
+    width: 100%;
+    max-width: 400px;
+}
+
+.student-actions button {
+    background: #1d4ed8;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 11px 18px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.student-actions button:hover {
+    opacity: 0.9;
+}
+
+.table-section button {
+    padding: 7px 10px;
+    margin: 2px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+@media (max-width: 600px) {
+    .student-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .student-actions button {
+        width: 100%;
+    }
+}
+
+/* Students Page */
+
+.student-actions {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 20px;
+    background: white;
+    padding: 20px;
+    margin-bottom: 25px;
+    border-radius: 10px;
+    box-shadow: 0 3px 12px #0000000d;
+}
+
+.student-actions .form-group {
+    flex: 1;
+}
+
+.student-actions input {
+    width: 100%;
+    max-width: 400px;
+}
+
+.student-actions button {
+    background: #1d4ed8;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 11px 18px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.student-actions button:hover {
+    opacity: 0.9;
+}
+
+.table-section button {
+    padding: 7px 10px;
+    margin: 2px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+@media (max-width: 600px) {
+    .student-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .student-actions button {
+        width: 100%;
+    }
+}

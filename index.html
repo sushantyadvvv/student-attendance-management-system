@@ -4,107 +4,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Attendance System</title>
+    <title>Dashboard - Student Attendance Management System</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <header>
         <h1>Student Attendance Management System</h1>
         <p>Manage student attendance easily</p>
     </header>
 
     <nav>
-        <a href="#dashboard">Dashboard</a>
-        <a href="#students">Students</a>
-        <a href="#attendance">Attendance</a>
-        <a href="#reports">Reports</a>
+        <a href="index.html">Dashboard</a>
+        <a href="students.html">Students</a>
+        <a href="attendance.html">Attendance</a>
+        <a href="reports.html">Reports</a>
     </nav>
 
     <main>
-        <!-- Dashboard Section -->
-        <section id="dashboard">
+        <section class="page-header">
             <h2>Dashboard</h2>
-            <p>Welcome to your attendance management system.</p>
+            <p>Welcome to your Student Attendance Management System.</p>
+        </section>
 
-            <div class="cards">
-                <div class="card">
-                    <h3>Total Students</h3>
-                    <p>5</p>
-                </div>
+        <section class="cards">
+            <div class="card">
+                <h3>Total Students</h3>
+                <p>3</p>
+            </div>
 
-                <div class="card">
-                    <h3>Present Today</h3>
-                    <p>0</p>
-                </div>
+            <div class="card">
+                <h3>Present Today</h3>
+                <p>0</p>
+            </div>
 
-                <div class="card">
-                    <h3>Absent Today</h3>
-                    <p>0</p>
-                </div>
+            <div class="card">
+                <h3>Absent Today</h3>
+                <p>0</p>
             </div>
         </section>
 
-        <!-- Student List Section -->
-        <section id="students">
-            <h2>Student List</h2>
+        <section class="table-section">
+            <h2>Student Overview</h2>
 
-            <table>
-                <thead>
-                    <tr>
-                        <th>Roll No.</th>
-                        <th>Student Name</th>
-                        <th>Course</th>
-                    </tr>
-                </thead>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Roll No.</th>
+                            <th>Student Name</th>
+                            <th>Course</th>
+                        </tr>
+                    </thead>
 
-                <tbody>
-                    <tr>
-                        <td>101</td>
-                        <td>Rahul Sharma</td>
-                        <td>BTech</td>
-                    </tr>
-                    <tr>
-                        <td>102</td>
-                        <td>Priya Verma</td>
-                        <td>BTech</td>
-                    </tr>
-                    <tr>
-                        <td>103</td>
-                        <td>Aman Singh</td>
-                        <td>BTech</td>
-                    </tr>
-                    <tr>
-                        <td>104</td>
-                        <td>Neha Gupta</td>
-                        <td>BTech</td>
-                    </tr>
-                    <tr>
-                        <td>105</td>
-                        <td>Arjun Kumar</td>
-                        <td>BTech</td>
-                    </tr>
-                </tbody>
-            </table>
+                    <tbody>
+                        <tr>
+                            <td>101</td>
+                            <td>Rahul Sharma</td>
+                            <td>B.Tech</td>
+                        </tr>
+
+                        <tr>
+                            <td>102</td>
+                            <td>Priya Verma</td>
+                            <td>B.Tech</td>
+                        </tr>
+
+                        <tr>
+                            <td>103</td>
+                            <td>Amit Kumar</td>
+                            <td>B.Tech</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </section>
 
-        <!-- Attendance Section -->
-        <section id="attendance">
-            <h2>Attendance</h2>
-            <p>Mark and manage student attendance.</p>
+        <section class="table-section">
+            <h2>Quick Links</h2>
             <p>
-                <a href="attendance.html">Open Attendance Management</a>
+                <a href="students.html">Manage Students</a> |
+                <a href="attendance.html">Mark Attendance</a> |
+                <a href="reports.html">View Reports</a>
             </p>
-        </section>
-
-        <!-- Reports Section -->
-        <section id="reports">
-            <h2>Reports</h2>
-            <p>Attendance reports will be added by the team.</p>
         </section>
     </main>
 
     <footer>
         <p>Student Attendance Management System | 2026</p>
     </footer>
+
 </body>
 </html>
