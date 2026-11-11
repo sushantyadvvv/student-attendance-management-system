@@ -1,12 +1,3 @@
-
-const students = [
-    { roll: "101", name: "Rahul Sharma" },
-    { roll: "102", name: "Priya Verma" },
-    { roll: "103", name: "Aman Singh" },
-    { roll: "104", name: "Neha Gupta" },
-    { roll: "105", name: "Arjun Kumar" }
-];
-
 const dateInput = document.getElementById("attendanceDate");
 const table = document.getElementById("attendanceTable");
 const recordsTable = document.getElementById("recordsTable");
@@ -20,6 +11,18 @@ const localDate =
 
 dateInput.value = localDate;
 
+// Students come from the Students page (saved in localStorage)
+function getStudents() {
+    try {
+        const students = JSON.parse(
+            localStorage.getItem("students") || "[]"
+        );
+        return Array.isArray(students) ? students : [];
+    } catch {
+        return [];
+    }
+}
+
 function getRecords() {
     try {
         const records = JSON.parse(
@@ -31,8 +34,28 @@ function getRecords() {
     }
 }
 
+function showEmptyRow(tbody, columns, text) {
+    const row = document.createElement("tr");
+    const cell = document.createElement("td");
+    cell.colSpan = columns;
+    cell.textContent = text;
+    row.appendChild(cell);
+    tbody.appendChild(row);
+}
+
 function renderStudents() {
     table.replaceChildren();
+
+    const students = getStudents();
+
+    if (students.length === 0) {
+        showEmptyRow(
+            table,
+            3,
+            "No students yet. Add students on the Students page first."
+        );
+        return;
+    }
 
     const saved = getRecords().filter(
         record => record.date === dateInput.value
@@ -78,24 +101,38 @@ function renderStudents() {
 function renderRecords() {
     recordsTable.replaceChildren();
 
-    getRecords()
-        .filter(record => record.date === dateInput.value)
-        .forEach(record => {
-            const row = document.createElement("tr");
+    const records = getRecords().filter(
+        record => record.date === dateInput.value
+    );
 
-            [record.date, record.roll, record.name, record.status]
-                .forEach(value => {
-                    const cell = document.createElement("td");
-                    cell.textContent = value;
-                    row.appendChild(cell);
-                });
+    if (records.length === 0) {
+        showEmptyRow(recordsTable, 4, "No attendance saved for this date.");
+        return;
+    }
 
-            recordsTable.appendChild(row);
-        });
+    records.forEach(record => {
+        const row = document.createElement("tr");
+
+        [record.date, record.roll, record.name, record.status]
+            .forEach(value => {
+                const cell = document.createElement("td");
+                cell.textContent = value;
+                row.appendChild(cell);
+            });
+
+        recordsTable.appendChild(row);
+    });
 }
 
 document.getElementById("markAllButton").addEventListener("click", () => {
-    table.querySelectorAll("select").forEach(select => {
+    const selects = table.querySelectorAll("select");
+
+    if (selects.length === 0) {
+        message.textContent = "Add students on the Students page first.";
+        return;
+    }
+
+    selects.forEach(select => {
         select.value = "Present";
     });
     message.textContent = "All students marked Present. Save to confirm.";
@@ -103,6 +140,12 @@ document.getElementById("markAllButton").addEventListener("click", () => {
 
 document.getElementById("saveButton").addEventListener("click", () => {
     const selects = [...table.querySelectorAll("select")];
+    const students = getStudents();
+
+    if (students.length === 0 || selects.length === 0) {
+        message.textContent = "Add students on the Students page first.";
+        return;
+    }
 
     if (!dateInput.value) {
         message.textContent = "Please select a date.";
